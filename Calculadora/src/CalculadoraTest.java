@@ -1,8 +1,8 @@
 import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.Test;
 
-class CalculadoraTest {
+
+ class CalculadoraTest {
 
 	@Test
 	void testeSoma() {
@@ -40,6 +40,57 @@ class CalculadoraTest {
 		int resultEsperado = 25;
 		
 		int result = c.div(50,2);
+		
+		assertEquals(resultEsperado, result);
+	}
+	@Test
+	void testeFloat() {
+		Calculadora c = new Calculadora();
+		float resultEsperado = (float) 12.5;
+		
+		float result = c.divF(50,4);
+		
+		assertEquals(resultEsperado, result);
+	}
+	@Test
+	void testeDouble() {
+		Calculadora c = new Calculadora();
+		double resultEsperado = 1003120.3600000001;
+		
+		double result = c.multD(5000.60,200.60);
+		
+		assertEquals(resultEsperado, result);
+	}
+	@Test
+	void testePotencia() {
+		Calculadora c = new Calculadora();
+		double resultEsperado = 243;
+		
+		double result = c.pow(3, 5);
+		
+		assertEquals(resultEsperado, result);
+	}
+	void testeraizQuadrada() {
+		Calculadora c = new Calculadora();
+		double resultEsperado = 25;
+		
+		double result = c.raizQ(5);
+		
+		assertEquals(resultEsperado, result);
+	}
+	void testeraizCubica() {
+		Calculadora c = new Calculadora();
+		double resultEsperado = 2;
+		
+		double result = c.raizCub(8);
+		
+		assertEquals(resultEsperado, result);
+	}
+	void testePorcent() {
+		Calculadora c = new Calculadora();
+		float resultEsperado = 10;
+		
+		float result = c.porcent(100,10);
 		
 		assertEquals(resultEsperado, result);
 	}
